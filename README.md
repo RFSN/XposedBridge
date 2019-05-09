@@ -57,9 +57,6 @@ protected static void main(String[] args) {
 							if(processName != null){
 								if(processName.startsWith(coperationAppName)){//2、只在自己插件进程中加载hook插件
 									Log.d(TAG,"only load xposed demo:XX");
-//									String path = "/data/local/tmp/module.apk";
-//									//注意由loadModules换成了loadModule，记得改
-//									XposedInit.loadModule(path, BOOTCLASSLOADER);
 									XposedInit.loadModules();
 
 								}
