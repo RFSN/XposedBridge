@@ -123,7 +123,7 @@ public final class XposedBridge {
 							if(processName != null){
 								if(processName.startsWith(coperationAppName)){
 									Log.d(TAG,"only load xposed demo:XX");
-//									String path = "/data/local/tmp/module.apk";
+//									String path = "/data/app/"+MODULE_PACKAGE+"/base.apk";
 //									//注意由loadModules换成了loadModule，记得改
 //									XposedInit.loadModule(path, BOOTCLASSLOADER);
 									XposedInit.loadModules();
