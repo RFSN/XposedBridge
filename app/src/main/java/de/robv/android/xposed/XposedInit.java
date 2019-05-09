@@ -472,7 +472,7 @@ import static de.robv.android.xposed.XposedHelpers.setStaticObjectField;
 	 * Load a module from an APK by calling the init(String) method for all classes defined
 	 * in <code>assets/xposed_init</code>.
 	 */
-	private static void loadModule(String apk, ClassLoader topClassLoader) {
+	static void loadModule(String apk, ClassLoader topClassLoader) {
 		Log.i(TAG, "Loading modules from " + apk);
 
 		if (!new File(apk).exists()) {
