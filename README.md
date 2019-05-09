@@ -1,5 +1,5 @@
 # XposedBridge
-XposedBridge 不用重启即可生效，不用安装XposedInstaller
+XposedBridge 不用重启即可生效，名重启; xposed;
 ### 使用方法
 
 1. 安装XBridgeIntaller
