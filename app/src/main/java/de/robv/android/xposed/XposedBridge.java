@@ -39,7 +39,7 @@ import static de.robv.android.xposed.XposedHelpers.setObjectField;
 @SuppressWarnings("JniMissingFunction")
 public final class XposedBridge {
 	public static final String MODULE_PACKAGE = "xposed.sohu.com.xposeddemo";
-
+	public static final String[] hookProcess = new String[]{MODULE_PACKAGE,"com.lahm.easyprotector","xposed.sohu.com.devicesdk"};
 
 	/**
 	 * The system class loader which can be used to locate Android framework classes.
@@ -118,17 +118,18 @@ public final class XposedBridge {
 							// TODO Auto-generated method stub
 							super.afterHookedMethod(param);
 							String processName = (String) XposedHelpers.getObjectField(param.args[0], "niceName");
-							String coperationAppName = MODULE_PACKAGE;
 							Log.d(TAG,"only load xposed demo"+processName);
 							if(processName != null){
-								if(processName.startsWith(coperationAppName)){
-									Log.d(TAG,"only load xposed demo:XX");
+								for(String proces:hookProcess) {
+									if(processName.startsWith(proces)){
+										Log.d(TAG,"only load xposed demo:XX");
 //									String path = "/data/app/"+MODULE_PACKAGE+"/base.apk";
 //									//注意由loadModules换成了loadModule，记得改
 //									XposedInit.loadModule(path, BOOTCLASSLOADER);
-									XposedInit.loadModules();
-
+										XposedInit.loadModules();
+									}
 								}
+
 							}
 						}
 
